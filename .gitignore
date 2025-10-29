@@ -1,0 +1,16 @@
+# FontAwesome Pro files (must be provided by user)
+fontawesome/
+
+# Docker volumes
+volumes/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

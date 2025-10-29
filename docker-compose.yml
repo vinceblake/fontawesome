@@ -1,0 +1,12 @@
+services:
+  fontawesome:
+    build: .
+    container_name: fontawesome-pro
+    ports:
+      - "8080:80"
+    volumes:
+      - ./fontawesome:/usr/share/nginx/html/fontawesome:ro
+    restart: unless-stopped
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
