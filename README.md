@@ -65,6 +65,7 @@ Add the following to your HTML `<head>` section:
 <link rel="stylesheet" href="http://localhost:8080/fontawesome/css/all.min.css">
 
 <!-- Or include specific styles -->
+<link rel="stylesheet" href="http://localhost:8080/fontawesome/css/fontawesome.min.css">
 <link rel="stylesheet" href="http://localhost:8080/fontawesome/css/solid.min.css">
 <link rel="stylesheet" href="http://localhost:8080/fontawesome/css/brands.min.css">
 ```

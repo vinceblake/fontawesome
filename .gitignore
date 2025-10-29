@@ -1,5 +1,6 @@
 # FontAwesome Pro files (must be provided by user)
 fontawesome/
+.env
 
 # Docker volumes
 volumes/
