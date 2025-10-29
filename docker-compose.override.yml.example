@@ -1,0 +1,55 @@
+# Docker Compose Override Example
+#
+# This file shows advanced configuration options.
+# Copy this to docker-compose.override.yml to use it.
+# Docker Compose will automatically merge it with docker-compose.yml
+
+services:
+  fontawesome:
+    # Use a different port
+    ports:
+      - "80:80"  # Use port 80 instead of 8080
+    
+    # Add custom environment variables
+    environment:
+      - NGINX_HOST=fontawesome.yourdomain.com
+      - NGINX_PORT=80
+    
+    # Add labels for monitoring or orchestration
+    labels:
+      - "com.example.description=FontAwesome Pro Service"
+      - "com.example.version=6.7.2"
+    
+    # Configure logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Set resource limits
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '0.5'
+    #       memory: 256M
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 128M
+    
+    # Add a custom network
+    # networks:
+    #   - frontend
+    
+    # Add health check
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+# Define custom networks if needed
+# networks:
+#   frontend:
+#     driver: bridge
