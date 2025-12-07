@@ -13,11 +13,12 @@ services:
       - NGINX_PORT=80
     restart: unless-stopped
     labels:
+      dozzle.visible: true
       traefik.enable: true
       traefik.http.routers.fontawesome.rule: Host(`${APP_URL}`)
       traefik.http.routers.fontawesome.entrypoints: websecure
       traefik.http.routers.fontawesome.tls.certresolver: letsencrypt
-      traefik.http.routers.fontawesome.middlewares: internal_only@file
+      traefik.http.routers.fontawesome.middlewares: internal_only@file, cors@file
       traefik.http.services.fontawesome.loadbalancer.server.port: 80
 
 networks:
